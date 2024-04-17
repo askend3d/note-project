@@ -10,7 +10,7 @@ export default function NotePage() {
     const navigate = useNavigate();
     const getNote = async () => {
         if (noteId === "new") return;
-        let response = await fetch(`http://localhost:8000/api/${noteId}`);
+        let response = await fetch(`http://localhost:8000/api/notes/${noteId}`);
         let data = await response.json();
         setNote(data);
     };
@@ -48,7 +48,6 @@ export default function NotePage() {
     };
 
     let handleSubmit = () => {
-        console.log(note);
         if (noteId !== "new" && note.body === "") {
             deleteNote();
         } else if (noteId !== "new") {

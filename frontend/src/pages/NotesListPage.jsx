@@ -4,7 +4,6 @@ import AddButton from "../components/AddButton";
 
 export default function NoteListPage() {
     let [notes, setNotes] = useState([]);
-
     useEffect(() => {
         getNotes();
     }, []);
